@@ -1,0 +1,6 @@
+{
+    "IsUserExist": "用户不存在",
+    "isMobilePhone": "手机号码不合法",
+    "IsPasswordValid": "密码应为8-10位字符, 至少包含一个数字和一个字母",
+    "IsUserNotExist": "用户已经存在"
+}

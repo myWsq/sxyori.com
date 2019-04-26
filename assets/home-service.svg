@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1400px" height="900px" viewBox="0 0 1400 900" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="100%" y1="30.0782446%" x2="2.22044605e-14%" y2="70.6632653%" id="linearGradient-1">
+            <stop stop-color="#292A2E" offset="0%"></stop>
+            <stop stop-color="#1F2024" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="32.9905089%" y1="12.4249189%" x2="99.1436197%" y2="94.2917086%" id="linearGradient-2">
+            <stop stop-color="#3139EC" offset="0%"></stop>
+            <stop stop-color="#FF0061" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="32.9905089%" y1="13.2886557%" x2="99.1436197%" y2="93.273577%" id="linearGradient-3">
+            <stop stop-color="#3139EC" offset="0%"></stop>
+            <stop stop-color="#FF0061" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="首页" transform="translate(0.000000, -898.000000)" fill-rule="nonzero">
+            <g id="Services" transform="translate(0.000000, 898.000000)">
+                <g id="Group">
+                    <rect id="bg" fill="url(#linearGradient-1)" x="0" y="0" width="1400" height="900"></rect>
+                    <ellipse id="Oval-Copy-8" fill="url(#linearGradient-2)" opacity="0.2" transform="translate(1301.000000, 636.000000) scale(-1, 1) translate(-1301.000000, -636.000000) " cx="1301" cy="636" rx="34" ry="33"></ellipse>
+                    <path d="M443,181.159974 C329.122948,130.20064 218.560811,139.802309 111.313588,209.964983 C-49.557247,315.208993 -4.51341323,407.899461 51.6451327,425.362317 C107.803679,442.825173 212.470266,420.116921 248.762178,506.957372 C272.956785,564.851006 337.702726,585.24977 443,568.153663 L443,181.159974 Z" id="Img" fill="url(#linearGradient-3)" opacity="0.2" transform="translate(221.500000, 361.500000) scale(-1, 1) translate(-221.500000, -361.500000) "></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="130px" height="120px" viewBox="0 0 130 120" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>bg</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="33.3412075%" y1="10.1131371%" x2="98.1303853%" y2="97.0167265%" id="linearGradient-1">
+            <stop stop-color="#3139EC" offset="0%"></stop>
+            <stop stop-color="#FF0061" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="33.3755378%" y1="10.1131371%" x2="98.0311986%" y2="97.0167265%" id="linearGradient-2">
+            <stop stop-color="#3139EC" offset="0%"></stop>
+            <stop stop-color="#FF0061" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.2">
+        <g id="首页" transform="translate(-64.000000, -1913.000000)" fill-rule="nonzero">
+            <g id="Profile" transform="translate(1.000000, 1798.000000)">
+                <g id="bg" transform="translate(63.954318, 115.000000)">
+                    <ellipse id="Oval-Copy-2" fill="url(#linearGradient-1)" transform="translate(86.261693, 76.092784) scale(-1, 1) translate(-86.261693, -76.092784) " cx="86.2616928" cy="76.0927835" rx="42.6462301" ry="43.0927835"></ellipse>
+                    <ellipse id="Oval-Copy-3" fill="url(#linearGradient-2)" transform="translate(24.715429, 25.000000) scale(-1, 1) translate(-24.715429, -25.000000) " cx="24.7154288" cy="25" rx="24.7154288" ry="25"></ellipse>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

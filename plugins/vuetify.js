@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuetify from 'vuetify/lib'
 import colors from 'vuetify/es5/util/colors'
 
+
 Vue.use(Vuetify, {
   theme: {
     primary: colors.blue.darken2,
@@ -13,3 +14,5 @@ Vue.use(Vuetify, {
     success: colors.green.accent3
   }
 })
+
+
