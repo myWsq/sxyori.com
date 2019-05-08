@@ -28,58 +28,55 @@
 						立即登录
 					</v-btn>
 				</v-layout>
-                <p>还没账户? <nuxt-link to="/register">立即注册</nuxt-link></p>
+				<p>还没账户? <nuxt-link to="/register">立即注册</nuxt-link></p>
 			</form>
-
 		</v-container>
 	</div>
 </template>
 
 <script>
-	import { mapActions } from 'vuex'
-	import Cookie from 'js-cookie'
+import { mapActions } from 'vuex'
+import Cookie from 'js-cookie'
 
-	export default {
-		middleware: 'noAuth',
-		data() {
-			return {
-				form: {
-					username: '',
-					password: ''
-				},
-				error: {
-					username: '',
-					password: ''
-				}
+export default {
+	head: {
+		title: '登录'
+	},
+	middleware: 'noAuth',
+	data() {
+		return {
+			form: {
+				username: '',
+				password: ''
+			},
+			error: {
+				username: '',
+				password: ''
 			}
-		},
-		computed: {
-			from() {
-				return this.$route.query.from || '/'
-			}
-		},
-		methods: {
-			...mapActions(['login', 'getMe']),
-			async onSubmit() {
-				const { data } = await this.login(this.form)
-				if (data.code === 1) {
-					const err = data.message[0]
-					const message = this.$t(
-						`validateError.${Object.keys(err.constraints)[0]}`
-					)
-					this.$set(this.error, err.property, message)
-				} else if (!data.code) {
-					const token = data.body
-					window.localStorage.setItem('token', token)
-					Cookie.set('token', token)
-                    await this.getMe()
-                    this.$router.push(this.from)
-				}
+		}
+	},
+	computed: {
+		from() {
+			return this.$route.query.from || '/'
+		}
+	},
+	methods: {
+		...mapActions(['login', 'getMe']),
+		async onSubmit() {
+			const { data } = await this.login(this.form)
+			if (data.code === 1) {
+				const err = data.message[0]
+				this.$set(this.error, err.property, true)
+			} else if (!data.code) {
+				const token = data.body
+				window.localStorage.setItem('token', token)
+				Cookie.set('token', token)
+				await this.getMe()
+				this.$router.push(this.from)
 			}
 		}
 	}
+}
 </script>
 
-<style lang="stylus" scoped>
-
-</style>
+<style lang="stylus" scoped></style>

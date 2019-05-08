@@ -1,5 +1,4 @@
-const cookieparser = process.server ? require('cookieparser') : undefined
-import Cookie from 'js-cookie'
+import Cookie from 'js-cookie';
 
 export const state = () => {
     return {
@@ -26,14 +25,7 @@ export const mutations = {
 }
 
 export const actions = {
-    async nuxtServerInit({ dispatch }, { req }) {
-        if (req.headers.cookie) {
-            const parsed = cookieparser.parse(req.headers.cookie)
-            const token = parsed.token
-            if (token) {
-                this.$axios.setHeader('Authorization', token)
-            }
-        }
+    async nuxtServerInit({ dispatch }) {
         await dispatch('getMe')
     },
     login({ commit }, payload) {
@@ -47,12 +39,6 @@ export const actions = {
         commit('setMe', null)
     },
     async getMe({ commit }) {
-        if (process.client) {
-            const token = localStorage.getItem('token')
-            if (token) {
-                this.$axios.setHeader('Authorization', token)
-            }
-        }
         try {
             const { data } = await this.$axios.get('/api/auth')
             if (!data.code) {

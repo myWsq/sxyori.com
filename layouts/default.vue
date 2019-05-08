@@ -9,12 +9,12 @@
 		<v-content id="top" class="content" app>
 			<nuxt></nuxt>
 		</v-content>
-		<v-footer class="mt-5">
+		<v-footer class="mt-3">
 			<v-container>
 				<v-layout justify-space-between>
 					<my-logo></my-logo>
 					<div>
-						<nuxt-link to="/dashboard">控制台</nuxt-link>
+						<nuxt-link to="/dashboard" v-if="me && (me.role === 'ADMIN' || me.role === 'SUPER_ADMIN') ">控制台</nuxt-link>
 						<a to="javascript:;" @click="onScrollTop">回到顶部</a>
 					</div>
 				</v-layout>
@@ -45,7 +45,7 @@
             TheChatBtn
 		},
 		computed: {
-			...mapState(['notify']),
+            ...mapState(['notify','me']),
 			notifyVisible: {
 				get() {
 					return !!this.notify
@@ -76,7 +76,7 @@
 
 	.v-footer {
 		height: auto !important;
-
+        z-index 1;
 		a {
 			text-decoration: none;
 			color: #878F9D;

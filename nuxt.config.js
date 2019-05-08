@@ -8,7 +8,7 @@ export default {
      ** Headers of the page
      */
     head: {
-        title: pkg.name,
+        titleTemplate: '%s - Yori 优瑞',
         meta: [
             { charset: 'utf-8' },
             {

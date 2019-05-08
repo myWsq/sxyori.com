@@ -4,11 +4,11 @@ export default [
         to: '/'
     },
     {
-        text: '关于我们',
-        to: '/about'
+        text: '新闻公告',
+        to: '/news'
     },
     {
-        text: '学院风采',
-        to: '/students'
+        text: '联系我们',
+        to: '/contact'
     }
 ]

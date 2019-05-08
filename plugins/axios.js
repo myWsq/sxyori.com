@@ -1,16 +1,40 @@
-import Notifications from 'vue-notification/dist/ssr.js'
 import Vue from 'vue'
 import validateError from '../error/validate.json'
-Vue.use(Notifications)
+const cookieparser = process.server ? require('cookieparser') : undefined
 
-export default function({ $axios, redirect, store }) {
+export default function({ $axios, redirect, store, req }, inject) {
+    const notify = function(msg) {
+        store.commit('setNotify', msg)
+    }
+
+    notify.success = text => {
+        notify({
+            type: 'success',
+            text
+        })
+    }
+    inject('msg', notify)
+    if (process.client) {
+        const token = localStorage.getItem('token')
+        if (token) {
+            $axios.setHeader('Authorization', token)
+        }
+    } else if (req.headers.cookie) {
+        const parsed = cookieparser.parse(req.headers.cookie)
+        const token = parsed.token
+        if (token) {
+            $axios.setHeader('Authorization', token)
+        }
+    }
     $axios.onResponse(res => {
         switch (res.data.code) {
             case 1:
                 const err = Object.keys(res.data.message[0].constraints)[0]
                 store.commit('setNotify', {
                     type: 'error',
-                    text: validateError[err] || res.data.message[0].constraints[err]
+                    text:
+                        validateError[err] ||
+                        res.data.message[0].constraints[err]
                 })
                 break
             case 4:

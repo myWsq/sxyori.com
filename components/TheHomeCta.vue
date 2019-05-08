@@ -8,7 +8,7 @@
 				</p>
 			</v-flex>
 			<v-flex xs12 sm3>
-				<v-btn large block round class="submit">立即注册</v-btn>
+				<v-btn large block round class="submit" nuxt to="/register">立即注册</v-btn>
 			</v-flex>
 		</v-layout>
 	</v-container>

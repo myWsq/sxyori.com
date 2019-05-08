@@ -67,53 +67,52 @@
 </template>
 
 <script>
-	import { mapActions } from 'vuex'
-	import SmsConfirmDialog from '../components/DialogSmsConfirm.vue'
-	export default {
-		components: {
-			SmsConfirmDialog
-		},
-		middleware: 'noAuth',
-		data() {
-			return {
-				form: {
-					username: '',
-					password: '',
-					nickName: '',
-					mobile: '',
-					smsCode: '',
-					gender: 1
-				},
-				error: {
-					username: '',
-					password: '',
-					nickName: '',
-					mobile: '',
-					smsCode: ''
-				},
-				smsSendLoading: false
-			}
-		},
-		methods: {
-			async onSendSms() {
-				this.smsSendLoading = true
-				this.$refs.smsConfirm.open(this.form.mobile)
-				this.smsSendLoading = false
+import { mapActions } from 'vuex'
+import SmsConfirmDialog from '../components/DialogSmsConfirm.vue'
+export default {
+	head: {
+		title: '注册'
+	},
+	components: {
+		SmsConfirmDialog
+	},
+	data() {
+		return {
+			form: {
+				username: '',
+				password: '',
+				nickName: '',
+				mobile: '',
+				smsCode: '',
+				gender: 1
 			},
-			async onSubmit() {
-				const { data } = await this.$axios.post('/api/user',this.form)
-				if (data.code === 1) {
-					const err = data.message[0]
-					const message = this.$t(
-						`validateError.${Object.keys(err.constraints)[0]}`
-					)
-					this.$set(this.error, err.property, message)
-				} else if (!data.code) {
-                    this.$router.push('/dashboard')
-				}
+			error: {
+				username: '',
+				password: '',
+				nickName: '',
+				mobile: '',
+				smsCode: ''
+			},
+			smsSendLoading: false
+		}
+	},
+	methods: {
+		async onSendSms() {
+			this.smsSendLoading = true
+			this.$refs.smsConfirm.open(this.form.mobile)
+			this.smsSendLoading = false
+		},
+		async onSubmit() {
+			const { data } = await this.$axios.post('/api/user', this.form)
+			if (data.code === 1) {
+				const err = data.message[0]
+				this.$set(this.error, err.property, true)
+			} else if (!data.code) {
+				this.$router.push('/dashboard')
 			}
 		}
 	}
+}
 </script>
 
 <style lang="stylus" scoped></style>

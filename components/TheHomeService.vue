@@ -49,7 +49,7 @@
 		<div class="mb-5">
 			<p class="p2">
 				如果您希望获得更详细的信息，请联系我们<br />
-				<v-btn outline round>CONTACT US</v-btn>
+				<v-btn outline round nuxt to="/contact">CONTACT US</v-btn>
 			</p>
 		</div>
 	</div>
