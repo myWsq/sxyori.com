@@ -1,5 +1,5 @@
 <template>
-	<v-layout justify-space-around align-center>
+	<div class="nav-pc">
 		<my-logo></my-logo>
 		<div>
 			<nuxt-link
@@ -36,57 +36,65 @@
 				</v-list>
 			</v-menu>
 		</div>
-	</v-layout>
+	</div>
 </template>
 
 <script>
-	import navList from './TheNavList.js'
-	import MyLogo from './Logo.vue'
-	import { mapState, mapActions } from 'vuex'
+import navList from './TheNavList.js'
+import MyLogo from './Logo.vue'
+import { mapState, mapActions } from 'vuex'
 
-	export default {
-		components: {
-			MyLogo
-		},
-		computed: {
-			...mapState(['me']),
-			list() {
-				return navList
-			}
-		},
-		methods: {
-			...mapActions(['logout']),
-			onLogout() {
-				this.$router.push('/')
-				this.logout()
-			}
+export default {
+	components: {
+		MyLogo
+	},
+	computed: {
+		...mapState(['me']),
+		list() {
+			return navList
+		}
+	},
+	methods: {
+		...mapActions(['logout']),
+		onLogout() {
+			this.$router.push('/')
+			this.logout()
 		}
 	}
+}
 </script>
 
 <style lang='stylus' scoped>
-	.nav-link {
-		text-decoration: none;
-		color: #C3C3C3;
-		font-weight: 500;
+.nav-pc {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	height: 64px;
+}
 
-		&.nuxt-link-exact-active {
-			color: #fff;
-			position: relative;
+.nav-link {
+	text-decoration: none;
+	color: #C3C3C3;
+	font-weight: 500;
 
-			&::after {
-				content: '';
-				position: absolute;
-				bottom: -5px;
-				left: 0;
-				right: 0;
-				height: 2px;
-				background: #0077FF;
-			}
-		}
+	&.nuxt-link-exact-active {
+		color: #fff;
+		position: relative;
 
-		& + & {
-			margin-left: 2.5em;
+		&::after {
+			content: '';
+			position: absolute;
+			bottom: -5px;
+			left: 0;
+			right: 0;
+			height: 2px;
+			background: #0077FF;
 		}
 	}
+
+	& + & {
+		margin-left: 2.5em;
+	}
+}
 </style>

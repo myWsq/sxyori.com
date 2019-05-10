@@ -1,13 +1,14 @@
 <template>
-	<v-layout>
-		<v-layout justify-space-between align-center>
+	<div class="nav-pc">
+		<v-toolbar justify-space-between align-center>
 			<my-logo></my-logo>
+            <v-spacer></v-spacer>
 			<div>
 				<v-btn flat icon @click="menuVisible = !menuVisible">
 					<v-icon>{{ menuVisible ? 'clear' : 'menu' }}</v-icon>
 				</v-btn>
 			</div>
-		</v-layout>
+		</v-toolbar>
 		<v-fade-transition>
 			<div class="menu" v-show="menuVisible" @click="menuVisible = false">
 				<v-toolbar>
@@ -51,7 +52,7 @@
 				</v-list>
 			</div>
 		</v-fade-transition>
-	</v-layout>
+	</div>
 </template>
 
 <script>
@@ -84,6 +85,12 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+.nav-pc {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
 .menu {
 	position: fixed;
 	left: 0;

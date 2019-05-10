@@ -39,84 +39,85 @@
 					<v-layout column align-center>
 						<v-icon class="mb-3">school</v-icon>
 						<h3>通过考核 分配工作</h3>
-						<h4>学习完成并通过我们的考核认证 我们将负责帮您推荐至您心仪的岗位</h4>
+						<h4>
+							学习完成并通过我们的考核认证 我们将负责帮您推荐至您心仪的岗位
+						</h4>
 					</v-layout>
 				</v-flex>
 			</v-layout>
 		</v-container>
 
 		<hr class="my-5" />
-		<div class="mb-5">
-			<p class="p2">
-				如果您希望获得更详细的信息，请联系我们<br />
-				<v-btn outline round nuxt to="/contact">CONTACT US</v-btn>
-			</p>
+		<div class="mb-5" style="text-align: center">
+			<p class="p2">如果您希望获得更详细的信息，请联系我们</p>
+			<v-btn outline round nuxt to="/contact">CONTACT US</v-btn>
 		</div>
 	</div>
 </template>
 
 <script>
-	export default {}
+export default {}
 </script>
 
 <style lang='stylus' scoped>
-	.service-container {
-		padding: 0 8%;
-		background-image: url('../assets/home-service.svg');
-		background-size: cover;
-		display: flex;
-		flex-direction: column;
-		justify-content: space-around;
-		align-items: center;
-	}
+.service-container {
+	padding: 0 8%;
+	background-image: url('../assets/home-service.svg');
+	background-size: cover;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+}
 
-	.header {
-		& > * {
-			text-align: center;
-		}
-	}
-
-	.p1 {
-		color: #dcdcdc;
-		font-weight: 300;
-	}
-
-	.p2 {
-		color: #fff;
-		font-weight: 500;
-		text-align: center;
-
-		.v-btn {
-			margin-top: 17px;
-		}
-	}
-
-	hr {
-		border: none;
-		height: 1px;
-		width: 80px;
-		background: rgba(231, 235, 239, 0.5);
-	}
-
-	.v-icon {
-		font-size: 2em;
-		padding: 1em;
-		background: rgba(255, 255, 255, 0.2);
-		border-radius: 50%;
-	}
-
-	.path {
-		max-width: 100%;
-
-		&.reserve {
-			transform: rotate(180deg);
-		}
-	}
-
-	h3,h4 {
+.header {
+	& > * {
 		text-align: center;
 	}
-    h4 {
-        color: rgba(135, 143, 157, 1);
-    }
+}
+
+.p1 {
+	color: #dcdcdc;
+	font-weight: 300;
+}
+
+.p2 {
+	color: #fff;
+	font-weight: 500;
+	text-align: center;
+
+	.v-btn {
+		margin-top: 17px;
+	}
+}
+
+hr {
+	border: none;
+	height: 1px;
+	width: 80px;
+	background: rgba(231, 235, 239, 0.5);
+}
+
+.v-icon {
+	font-size: 2em;
+	padding: 1em;
+	background: rgba(255, 255, 255, 0.2);
+	border-radius: 50%;
+}
+
+.path {
+	max-width: 100%;
+
+	&.reserve {
+		transform: rotate(180deg);
+	}
+}
+
+h3, h4 {
+	text-align: center;
+}
+
+h4 {
+	color: rgba(135, 143, 157, 1);
+}
 </style>
