@@ -12,7 +12,7 @@
 			</tr>
 			<tr v-for="item in list" :key="item.id">
 				<td width="70%">{{ item.course.name }}</td>
-				<td class="grade" :class="{ success: item.grade >= 60 }">
+				<td class="grade" :class="{ pass: item.grade >= 60 }">
 					{{ item.grade }}
 				</td>
 			</tr>
@@ -82,7 +82,7 @@ table {
 			color: red;
 		}
 
-		&.success {
+		&.pass {
 			color: #37C0A4;
 		}
 	}
