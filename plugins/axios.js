@@ -14,18 +14,22 @@ export default function({ $axios, redirect, store, req }, inject) {
         })
     }
     inject('msg', notify)
-    if (process.client) {
-        const token = localStorage.getItem('token')
-        if (token) {
-            $axios.setHeader('Authorization', token)
+    $axios.onRequest(config => {
+        if (process.client) {
+            const token = localStorage.getItem('token')
+            if (token) {
+                config.headers['Authorization'] = token
+                // $axios.setHeader('Authorization', token)
+            }
+        } else if (req.headers.cookie) {
+            const parsed = cookieparser.parse(req.headers.cookie)
+            const token = parsed.token
+            if (token) {
+                config.headers['Authorization'] = token
+                // $axios.setHeader('Authorization', token)
+            }
         }
-    } else if (req.headers.cookie) {
-        const parsed = cookieparser.parse(req.headers.cookie)
-        const token = parsed.token
-        if (token) {
-            $axios.setHeader('Authorization', token)
-        }
-    }
+    })
     $axios.onResponse(res => {
         switch (res.data.code) {
             case 1:

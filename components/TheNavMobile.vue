@@ -2,7 +2,7 @@
 	<div class="nav-pc">
 		<v-toolbar justify-space-between align-center>
 			<my-logo></my-logo>
-            <v-spacer></v-spacer>
+			<v-spacer></v-spacer>
 			<div>
 				<v-btn flat icon @click="menuVisible = !menuVisible">
 					<v-icon>{{ menuVisible ? 'clear' : 'menu' }}</v-icon>
@@ -91,6 +91,7 @@ export default {
 	align-items: center;
 	justify-content: space-between;
 }
+
 .menu {
 	position: fixed;
 	left: 0;

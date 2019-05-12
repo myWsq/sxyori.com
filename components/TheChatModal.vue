@@ -129,7 +129,7 @@ export default {
 
 #modal-main {
 	position: relative;
-	height: 90%;
+	flex-basis : 90%;
 	overflow: hidden;
 	overscroll-behavior: none;
 }
