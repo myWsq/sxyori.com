@@ -38,6 +38,7 @@ import validateError from '../../error/validate.json'
 import SmsConfirmDialog from '@/components/DialogSmsConfirm.vue'
 
 export default {
+    middleware: 'auth',
 	head: {
 		title: '安全设置'
 	},

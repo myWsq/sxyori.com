@@ -1,10 +1,5 @@
 <template>
 	<div>
-		<header>
-			<p>入学日期: {{ intentedAt }}</p>
-			<p>毕业日期: {{ gradutedAt }}</p>
-		</header>
-		<h3>成绩统计</h3>
 		<table border>
 			<tr>
 				<th width="70%">课程名称</th>
@@ -15,18 +10,23 @@
 				<td class="grade" :class="{ pass: item.grade >= 60 }">
 					{{ item.grade }}
 				</td>
+
 			</tr>
+            <tr>
+                <td colspan="2" v-if='list.length === 0'>暂无课程</td>
+            </tr>
 		</table>
 
-		<v-btn color="primary" :disabled="!isPassed" large class="ma-0 mt-4"
+		<!-- <v-btn color="primary" :disabled="!isPassed" large class="ma-0 mt-4"
 			>下载毕业证书</v-btn
-		>
+		> -->
 	</div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
 export default {
+	middleware: 'auth',
 	head: {
 		title: '学习进度'
 	},
@@ -61,6 +61,7 @@ h3 {
 }
 
 table {
+	margin-top: 20px;
 	width: 500px;
 	border: 1px solid;
 	border-collapse: collapse;

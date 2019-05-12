@@ -9,7 +9,7 @@
 		</v-content>
 		<v-footer class="mt-3">
 			<v-container>
-				<v-layout justify-space-between>
+				<v-layout justify-space-between class="main-content">
 					<my-logo></my-logo>
 					<div>
 						<nuxt-link
@@ -75,7 +75,7 @@ export default {
 	top: 0;
 	left: 0;
 	right: 0;
-    z-index 2;
+	z-index: 2;
 }
 
 .v-footer {

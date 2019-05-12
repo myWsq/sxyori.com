@@ -1,10 +1,10 @@
 <template>
 	<v-container class="teacher" v-if="src.length > 0">
-		<h2>我们的教师团队</h2>
+		<h2>我们的精品课程</h2>
 		<v-layout row wrap justify-space-between>
 			<v-flex xs12 sm6>
 				<p>
-					数十年行业经验, 为你带来一线干货
+					每一门课程都精心准备, 理论教学与实践相结合
 				</p>
 			</v-flex>
 			<v-layout justify-end>
@@ -73,7 +73,6 @@ export default {
 
 <style lang="stylus" scoped>
 .teacher {
-	min-height: 100vh;
 	background: url('http://ipic-1253962968.file.myqcloud.com/2019-04-22-bg.svg') no-repeat;
 }
 

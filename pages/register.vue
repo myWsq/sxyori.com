@@ -59,7 +59,7 @@
 						立即注册
 					</v-btn>
 				</v-layout>
-				<p>已有账户? <nuxt-link to="/register">立即登录</nuxt-link></p>
+				<p>已有账户? <nuxt-link to="/login">立即登录</nuxt-link></p>
 			</form>
 		</v-container>
 		<sms-confirm-dialog ref="smsConfirm"></sms-confirm-dialog>
@@ -108,7 +108,8 @@ export default {
 				const err = data.message[0]
 				this.$set(this.error, err.property, true)
 			} else if (!data.code) {
-				this.$router.push('/dashboard')
+                this.$notify.success('注册成功');
+				this.$router.push('/login')
 			}
 		}
 	}

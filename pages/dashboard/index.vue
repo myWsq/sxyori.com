@@ -34,6 +34,7 @@ import { mapState } from 'vuex'
 import validateError from '../../error/validate.json'
 
 export default {
+	middleware: 'auth',
 	head: {
 		title: '基本信息'
 	},
